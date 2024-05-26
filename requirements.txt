@@ -4,4 +4,3 @@ django-bootstrap4==22.3
 crispy-bootstrap4==2022.1
 djangorestframework==3.14.0
 mysqlclient
-sslserver
