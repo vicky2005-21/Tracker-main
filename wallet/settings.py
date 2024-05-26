@@ -51,7 +51,7 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://*.run-on-seenode.com'
+    '*'
 ]
 
 MIDDLEWARE = [
