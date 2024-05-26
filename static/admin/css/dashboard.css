@@ -1,0 +1,50 @@
+/* DASHBOARD */
+.dashboard td, .dashboard th {
+    word-break: break-word;
+    color: #000; /* Black text color */
+    background-color: #fff; /* White background */
+}
+
+.dashboard .module table th {
+    width: 100%;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.dashboard .module table td {
+    white-space: nowrap;
+    color: #000; /* Black text color */
+    background-color: #fff; /* White background */
+}
+
+.dashboard .module table td a {
+    display: block;
+    padding-right: .6em;
+    color: #000; /* Black text color */
+    transition: transform 0.3s ease; /* Smooth transform on hover */
+}
+
+.dashboard .module table td a:hover {
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+
+/* RECENT ACTIONS MODULE */
+
+.module ul.actionlist {
+    margin-left: 0;
+    background-color: #fff; /* White background */
+}
+
+ul.actionlist li {
+    list-style-type: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #000; /* Black text color */
+    border-bottom: 1px solid #000; /* Black border for separation */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+ul.actionlist li:hover {
+    background-color: #e6e6e6; /* Light grey background on hover */
+}

@@ -1,0 +1,71 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+
+    <title>Tracker | {% block title %} {% endblock %}</title>
+    
+    <meta name="description" content="This Website is for Money Management and Tracking Expenses."/>
+    <meta name="author" content="Vignesh"/>
+    <meta property="og:title" content="Vignesh"/>
+    <meta property="og:site_name" content="Vignesh Tracker Website"/>
+    <meta property="og:url" content=""/>
+    <meta property="og:description" content="This Website is for Money Management and Tracking Expenses."/>
+    <meta property="og:type" content="website"/>
+    
+    <script src="https://use.fontawesome.com/c0fc7bc651.js"></script>
+    
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="{% static 'admin/folder/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/css/bootstrap-extend.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/css/master_style.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/css/skins/_all-skins.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/assets/vendor_components/themify-icons/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/assets/vendor_components/linea-icons/linea.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/assets/vendor_components/glyphicons/glyphicon.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/assets/vendor_components/flag-icon/css/flag-icon.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/assets/vendor_components/material-design-iconic-font/css/materialdesignicons.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/assets/vendor_components/jquery-toast-plugin-master/src/jquery.toast.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/folder/assets/vendor_components/simple-line-icons-master/css/simple-line-icons.css' %}">
+
+</head>
+<body class="hold-transition login-page">
+    <div class="img-blury" style="background-image: url({% static 'admin/folder/images/afs.jpg' %})"></div>
+    <div class="container h-p100 blury">
+        <div class="row align-items-center justify-content-md-center h-p100">
+            <div class="col-lg-3 col-md-8 col-12 d-none d-lg-block bg-clor" id="set-height-auto">
+                <div class="box mb-0 b-0 bg-transparent" style="height: inherit; justify-content: center;">
+                    <div id="carousel-example-generic-captions" class="carousel slide" data-ride="carousel">
+                        <div class="col-md-8 display-block mx-auto display-flex h-100" style=" justify-content: center; display: flex; align-items: center;">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <!-- jQuery 3 -->
+    <script src="{% static 'admin/folder/assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js' %}"></script>
+    <!-- popper -->
+    <script src="{% static 'admin/folder/assets/vendor_components/popper/dist/popper.min.js' %}"></script>
+    <!-- Bootstrap 4.0-->
+    <script src="{% static 'admin/folder/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'user/folder/assets/js/bootstrap-notify.min.js' %}"></script>
+    <script src="{% static 'admin/folder/assets/vendor_components/jquery-toast-plugin-master/src/jquery.toast.js' %}"></script>
+    <script>
+        window.onload = function () {
+            $('[name="username"]').focus();
+            var height_div = $("#temp").height();
+            $("#set-height-auto").css('height', +height_div + "px");
+            $('#login_loader').css('display', 'none');
+        }
+    </script>
+</body>
+</html>

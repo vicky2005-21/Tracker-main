@@ -1,0 +1,336 @@
+/* custom_theme.css */
+
+/* Apply black background and white text globally */
+body, html {
+    background-color: #000 !important; /* Black background */
+    color: #fff !important; /* White text */
+}
+
+.navbar, .main-header .navbar, .main-footer, .sidebar, .main-sidebar, .sidebar-menu, .sidebar-menu li a {
+    background-color: #000 !important; /* Black background for navbar, footer, sidebar */
+    color: #fff !important; /* White text */
+}
+
+.box, .card, .content, .content-wrapper {
+    background-color: #000 !important; /* Black background for main content areas */
+    color: #fff !important; /* White text */
+    border: none !important; /* Remove any borders */
+    box-shadow: none !important; /* Remove box shadow */
+}
+
+a, .navbar a, .sidebar-menu a, .content-wrapper a, .main-footer a {
+    color: #fff !important; /* White text for links */
+}
+
+.table, .table th, .table td {
+    background-color: #000 !important; /* Black table background */
+    color: #fff !important; /* White text */
+}
+
+.form-control {
+    background-color: #000 !important; /* Black form controls */
+    color: #fff !important; /* White text */
+    border: 1px solid #fff !important; /* White border */
+}
+
+.btn {
+    background-color: #fff !important; /* White buttons */
+    color: #000 !important; /* Black text on buttons */
+}
+
+.sidebar-menu .treeview-menu {
+    background-color: #000 !important; /* Black submenu */
+}
+
+.sidebar-menu li.active a {
+    background-color: #555 !important; /* Active menu item */
+}
+
+.text-muted {
+    color: #fff !important; /* White text for muted text */
+}
+
+/* Make calendar icon white */
+input[type="month"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Breadcrumb styling */
+.breadcrumb, .breadcrumb a, .breadcrumb-item, .breadcrumb-item a {
+    background-color: #000 !important; /* Black background for breadcrumb */
+    color: #fff !important; /* White text for breadcrumb */
+    border: none !important; /* Remove any borders */
+}
+
+/* Ensuring visibility of text */
+.text-muted, .text-center h3, .db, .text-center {
+    color: #fff !important; /* Ensuring white text for specific elements */
+}
+
+/* Additional styling for specific elements */
+#date_value, .fa-info-circle, .label {
+    color: #fff !important; /* Ensuring specific icons and labels are white */
+}
+
+.breadcrumb {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.breadcrumb a {
+    color: #fff !important;
+}
+
+.breadcrumb-item.active {
+    color: #fff !important;
+}
+
+/* Sidebar */
+.main-sidebar {
+    background-color: #000 !important;
+    color: #000000 !important;
+}
+
+.sidebar-menu {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.sidebar-menu a {
+    color: #fff !important;
+}
+
+/* Sidebar user profile */
+.user-profile .pl-10 {
+    color: #fff !important;
+}
+
+/* Header */
+.main-header {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.logo-lg img {
+    filter: invert(1);
+}
+
+.navbar-custom-menu a {
+    color: #fff !important;
+}
+
+/* Custom style for the text in left corner */
+.set-hehe-1 a, .set-hehe-2 a {
+    color: #fff !important;
+}
+
+/* Additional adjustments */
+input.form-control, .table {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Ensure all modals are styled correctly */
+.modal-content {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* custom_theme.css */
+
+/* Apply black background and white text globally */
+body, html {
+    background-color: #000 !important; /* Black background */
+    color: #fff !important; /* White text */
+}
+
+/* Navbar */
+.navbar, .main-header .navbar, .navbar-custom-menu, .navbar-custom-menu a {
+    background-color: #000 !important; /* Black background for navbar */
+    color: #fff !important; /* White text for navbar */
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+    color: #fff !important; /* White text for sidebar toggle button */
+}
+
+/* User dropdown menu */
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.8) !important; /* Dark background for dropdown menu */
+    color: #fff !important; /* White text for dropdown menu */
+}
+
+.dropdown-menu a {
+    color: #fff !important; /* White text for dropdown menu items */
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important; /* Light hover effect for dropdown menu items */
+}
+
+/* Icons in navbar */
+.navbar .fa {
+    color: #fff !important; /* White icons in navbar */
+}
+
+/* Additional styling for navbar elements */
+.set-hehe-1 a, .set-hehe-2 a {
+    color: #fff !important; /* Ensure sidebar toggle and user menu items are white */
+}
+
+/* Links in navbar */
+.navbar a {
+    color: #fff !important; /* White text for links in navbar */
+}
+
+/* Breadcrumb */
+.breadcrumb, .breadcrumb a, .breadcrumb-item, .breadcrumb-item a {
+    background-color: #000 !important; /* Black background for breadcrumb */
+    color: #fff !important; /* White text for breadcrumb */
+    border: none !important; /* Remove any borders */
+}
+
+/* General adjustments */
+.box, .card, .content, .content-wrapper {
+    background-color: #000 !important; /* Black background for main content areas */
+    color: #fff !important; /* White text */
+    border: none !important; /* Remove any borders */
+    box-shadow: none !important; /* Remove box shadow */
+}
+
+a, .sidebar-menu a, .content-wrapper a, .main-footer a {
+    color: #fff !important; /* White text for links */
+}
+
+.table, .table th, .table td {
+    background-color: #000 !important; /* Black table background */
+    color: #fff !important; /* White text */
+}
+
+.form-control {
+    background-color: #000 !important; /* Black form controls */
+    color: #fff !important; /* White text */
+    border: 1px solid #fff !important; /* White border */
+}
+
+.btn {
+    background-color: #fff !important; /* White buttons */
+    color: #000 !important; /* Black text on buttons */
+}
+
+.sidebar-menu .treeview-menu {
+    background-color: #000 !important; /* Black submenu */
+}
+
+.sidebar-menu li.active a {
+    background-color: #555 !important; /* Active menu item */
+}
+
+.text-muted {
+    color: #fff !important; /* White text for muted text */
+}
+
+/* Make calendar icon white */
+input[type="month"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* Ensuring visibility of text */
+.text-muted, .text-center h3, .db, .text-center {
+    color: #fff !important; /* Ensuring white text for specific elements */
+}
+
+/* Additional styling for specific elements */
+#date_value, .fa-info-circle, .label {
+    color: #fff !important; /* Ensuring specific icons and labels are white */
+}
+
+/* Sidebar */
+.main-sidebar {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.sidebar-menu {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.sidebar-menu a {
+    color: #fff !important;
+}
+
+/* Sidebar user profile */
+.user-profile .pl-10 {
+    color: #fff !important;
+}
+
+/* Header */
+.main-header {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.logo-lg img {
+    filter: invert(1);
+}
+
+/* Breadcrumb */
+.breadcrumb, .breadcrumb a {
+    background-color: #000 !important; /* Black background */
+    color: #fff !important; /* White text */
+}
+
+.breadcrumb-item.active {
+    color: #fff !important;
+}
+
+/* Content section */
+.content-wrapper, .content-header {
+    background-color: #000 !important; /* Black background for content */
+    color: #fff !important; /* White text */
+}
+
+/* Additional adjustments */
+input.form-control, .table {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Ensure all modals are styled correctly */
+.modal-content {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Footer */
+.footer {
+    background-color: #000 !important;
+    color: #fff !important;
+    width: 100% !important; /* Ensure the footer spans the full width */
+    text-align: center; /* Center the content */
+    border-top: 1px solid #fff !important; /* Add a white border at the top */
+    padding: 20px 0; /* Add some padding */
+}
+
+/* Ensure footer text is white */
+.footer a, .footer p {
+    color: #fff !important;
+}
+
+/* Additional styling to fit the footer correctly */
+.footer .main-footer__upper, .footer .main-footer__lower {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .social-icon {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer .social-icon li {
+    margin-left: 10px;
+}

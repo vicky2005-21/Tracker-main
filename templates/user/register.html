@@ -1,0 +1,209 @@
+{% extends 'user/index.html' %}
+{% load static %}
+{% block title %} {{ Title }} Register {% endblock %}
+{% block content %}
+
+    <div style="background-color: #ffffff;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            left: 0;" id="login_loader">
+        <img src="{% static 'admin/folder/images/loader.gif' %}" style="max-height: 130px;" alt="loader">
+    </div>
+
+    <div class="col-lg-4 col-md-8 col-12 centerr marginn" id="temp">
+        <div style="height: auto !important;">
+            <div class="login-box-body"
+                 style="border-top-left-radius: 0px !important;border-bottom-left-radius: 0px !important;">
+                <div class="row pbb-80">
+                    <div class="col-12">
+                        <div class="col-md-8 nonee display-block mx-auto display-flex h-100"
+                             style=" justify-content: center; display: none; align-items: center;">
+                          
+                        </div>
+                        <h3 class="text-center pb-5">Welcome <span class="nonne"> To Tracker </span></h3>
+                        <p class="login-box-msg ">Please Register to Tracker Dashboard</p>
+
+                    </div>
+                </div>
+
+                <form method="POST" id="registerr_form" onsubmit="registerr(); return false;">
+                    {% csrf_token %}
+
+                    <div class="form-group has-feedback">
+                        <label for="exampleInputusername1">
+                            Username
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" name="username" class="form-control rounded" autocomplete="off"
+                               id="exampleInputusername1" placeholder="Enter Username" required>
+                        <span class="icon-adj fa fa-user form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label for="exampleInputEmail1">
+                            Email
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="email" name="email" class="form-control rounded" autocomplete="off"
+                               id="exampleInputEmail1" placeholder="Enter Email" required>
+                        <span class="icon-adj fa fa-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label for="exampleInputPassword1">
+                            Password
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="password" name="password" class="form-control rounded" autocomplete="off"
+                               id="exampleInputPassword1" placeholder="Enter Password" required>
+                        <span class="icon-adj fa fa-lock form-control-feedback"></span>
+                    </div>
+                    {% if messages %}
+
+                        {% for message in messages %}
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="fog-pwd text-center">
+                                        <div style="border-color: red !important;
+                                            color: red !important;
+                                            background-color: #ff5e5929 !important;"
+                                             class="alert alert-info">
+                                            {{ message }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+                    <div class="row" id="message" style="display: none;">
+                        <div class="col-12">
+                            <div class="fog-pwd text-center">
+                                <div class="alert alert-info" id="message_1"
+                                     style="
+                                        color: red !important;
+                                        background-color: #ff5e5929 !important;
+                                        border-color: red !important;
+                                     "
+                                >
+
+                                </div>
+
+                                <div class="alert alert-info" id="message_2"
+                                     style="
+                                        color: green !important;
+                                        background-color: rgba(0, 255, 78, 0.16) !important;
+                                        border-color: green !important;
+                                     "
+                                >
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-info btn-block margin-top-10">create Account</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12 mt-15">
+                            <div class=" text-left float-left">
+                                <a href="/" class="text-danger">
+                                    <i class="fa fa-user"></i> Have you already account? click here to Login .....!
+                                </a>
+                                <br>
+                            </div>
+                            <div class="fog-pwd text-left float-left pt-3">
+                                <a href="https://tr-portfolio-tan.vercel.app/" target="_blank"
+                                   class="text-danger"><i class="fa fa-unlock"></i> Get Contact? ?</a><br>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="checkauthent" value='0'>
+
+                </form>
+
+
+                <!-- /.social-auth-links -->
+
+
+            </div>
+            <!-- /.login-box-body -->
+        </div>
+        <!-- /.login-box -->
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script>
+
+        function registerr() {
+            var pass = $('#exampleInputPassword1').val().length;
+
+            if (pass >= 8) {
+                $('#login_loader').css('display', 'flex').css('background-color', 'rgb(0 0 0 / 56%)');
+                $.ajax({
+                    url: '/register/',
+                    method: 'POST',
+                    data: $('#registerr_form').serialize(),
+                    dataType: 'JSON',
+                    success: function (data) {
+
+                        if (data.status == true) {
+                            const massage_1 = $('#message_1').html(data.msg);
+                            const massage_2 = $('#message_2').html(data.msg);
+                            if (data.exists == "usercreate") {
+                                massage_2.css('display', 'block');
+                                massage_1.css('display', 'none');
+                                $('#registerr_form').trigger('reset');
+                                $('#login_loader').css('display', 'none');
+                                setTimeout(function () {
+                                    window.location.href = "/token/";
+                                }, 5500);
+                            }
+
+                            else {
+                                massage_1.css('display', 'block');
+                                massage_2.css('display', 'none');
+                            }
+                            $('#message').css('display', 'block');
+                            setTimeout(function () {
+                                $('#login_loader').css('display', 'none');
+                            }, 1500);
+
+
+                        } else {
+                            setTimeout(function () {
+                                window.location.href = "/register/";
+                            }, 4500);
+                        }
+                    }
+
+                });
+            } else {
+                const massage_1 = $('#message_1').html('Password must be 8 character.....!');
+                const massage_2 = $('#message_2');
+                massage_1.css('display', 'block');
+                massage_2.css('display', 'none');
+                $('#message').css('display', 'block');
+                $('#login_loader').css('display', 'none');
+            }
+
+        }
+
+    </script>
+
+{% endblock %}

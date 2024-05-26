@@ -1,0 +1,34 @@
+
+:root {
+    --main-bg-color: #FFFFFF;
+    --text-color: #000000;
+    --accent-color: #CCCCCC;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+}
+
+a, button {
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover, button:hover {
+    color: var(--accent-color);
+}
+
+.main-sidebar {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    color: white;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transition: left 0.3s ease;
+}
+
+.main-sidebar.closed {
+    left: -250px;
+}

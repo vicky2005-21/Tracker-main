@@ -1,0 +1,95 @@
+{% extends 'user/index.html' %}
+
+{% load static %}
+{% block title %} {{ Title }} Login {% endblock %}
+{% block content %}
+
+
+
+    <div class="col-lg-4 col-md-8 col-12 centerr marginn" id="temp">
+        
+            <div class="login-box-body"
+                 style="border-top-left-radius: 0px !important;border-bottom-left-radius: 0px !important;">
+                <div class="row pbb-80">
+                    <div class="col-12">
+                        <h3 class="text-center pb-5">Welcome to Tracker</h3>
+                        <p class="login-box-msg">Please Login to Tracker Dashboard</p>
+                    </div>
+                </div>
+
+                <form method="POST">
+                    <div class="form-group has-feedback">
+                        <label for="exampleInputEmail1">
+                            Username / Email
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="text" name="username" class="form-control rounded" autocomplete="off"
+                               id="exampleInputEmail1" placeholder="Enter Email/Username" required>
+                        <span class="icon-adj fa fa-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <label for="exampleInputPassword1">
+                            Password
+                            <span class="text-danger">*</span>
+                        </label>
+                        <input type="password" name="password" class="form-control rounded" autocomplete="off"
+                               id="exampleInputPassword1" placeholder="Enter Password" required>
+                        <span class="icon-adj fa fa-lock form-control-feedback"></span>
+                    </div>
+                    {% if messages %}
+
+                        {% for message in messages %}
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="fog-pwd text-center">
+                                        <div style="
+                                                {% if message.tags == 'success' %}
+                                                    border-color: #1e88e5 !important;
+                                                    color: #1e88e5 !important;
+                                                    background-color: #403df41a !important;
+                                                {% else %}
+                                                    border-color: red !important;
+                                                    color: red !important;
+                                                    background-color: #ff5e5929 !important;
+                                                {% endif %}
+                                                "
+                                             class="alert alert-info">
+                                            {{ message }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-info btn-block margin-top-10">Login</button>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12 mt-15">
+                            <div class="text-left float-left">
+                                <a href="/register/" class="text-danger"><i class="fa fa-user"></i> Create Account?</a><br>
+                            </div>
+                            <div class="fog-pwd text-right float-right">
+                                <a href="/password-reset/" class="text-danger"><i class="fa fa-lock"></i> Forgot Your Password?</a><br>
+                            </div>
+                            <div class="fog-pwd text-right float-right pt-4">
+                                <a href="https://tr-portfolio-tan.vercel.app/" target="_blank" class="text-danger"><i class="fa fa-unlock"></i> Get Contact?</a><br>
+                            </div>
+                        </div>
+                    </div>
+                    {% csrf_token %}
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    
+
+{% endblock %}

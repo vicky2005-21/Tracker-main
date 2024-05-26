@@ -1,0 +1,142 @@
+/* Sticky positioning for elements */
+.sticky {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+}
+
+/* Toggle navigation sidebar */
+.toggle-nav-sidebar {
+    z-index: 20;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 23px;
+    width: 23px;
+    border: 0;
+    border-right: 1px solid #000; /* Changed to black for high contrast */
+    background-color: #fff; /* White background */
+    cursor: pointer;
+    font-size: 1.25rem;
+    color: #000; /* Black text */
+    padding: 0;
+    transition: transform 0.2s ease-in-out; /* Adds a smooth transform effect */
+}
+
+[dir="rtl"] .toggle-nav-sidebar {
+    border-left: 1px solid #000; /* Changed to black for high contrast */
+    border-right: 0;
+}
+
+.toggle-nav-sidebar:hover,
+.toggle-nav-sidebar:focus {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    transform: rotate(180deg); /* Rotates the button on hover/focus */
+}
+
+/* Navigation sidebar */
+#nav-sidebar {
+    z-index: 15;
+    flex: 0 0 275px;
+    left: -276px;
+    margin-left: -276px;
+    border-top: 1px solid transparent;
+    border-right: 1px solid #000; /* Changed to black for visibility */
+    background-color: #fff; /* White background */
+    overflow: auto;
+}
+
+[dir="rtl"] #nav-sidebar {
+    border-left: 1px solid #000; /* Changed to black */
+    border-right: 0;
+    left: 0;
+    margin-left: 0;
+    right: -276px;
+    margin-right: -276px;
+}
+
+.toggle-nav-sidebar::before {
+    content: '\00BB'; /* Changed icon to be more generic */
+}
+
+.main.shifted .toggle-nav-sidebar::before {
+    content: '\00AB'; /* Changed icon for consistency */
+}
+
+.main > #nav-sidebar {
+    visibility: hidden;
+}
+
+.main.shifted > #nav-sidebar {
+    margin-left: 0;
+    visibility: visible;
+}
+
+[dir="rtl"] .main.shifted > #nav-sidebar {
+    margin-right: 0;
+}
+
+/* Nav sidebar table styles */
+#nav-sidebar .module th {
+    width: 100%;
+    overflow-wrap: anywhere;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+#nav-sidebar .module th,
+#nav-sidebar .module caption {
+    padding-left: 16px;
+}
+
+[dir="rtl"] #nav-sidebar .module th,
+[dir="rtl"] #nav-sidebar .module caption {
+    padding-left: 8px;
+    padding-right: 16px;
+}
+
+#nav-sidebar .current-app .section:link,
+#nav-sidebar .current-app .section:visited {
+    color: #000; /* Black text */
+    font-weight: bold;
+}
+
+#nav-sidebar .current-model {
+    background: #e6e6e6; /* Light grey background for selection */
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    #nav-sidebar, #toggle-nav-sidebar {
+        display: none;
+    }
+
+    .main > #nav-sidebar + .content,
+    .main.shifted > #nav-sidebar + .content {
+        max-width: 100%;
+    }
+}
+
+/* Navigation filter */
+#nav-filter {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2px 5px;
+    margin: 5px 0;
+    border: 1px solid #000; /* Black border */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+#nav-filter:focus {
+    border-color: #fff; /* White border on focus */
+}
+
+#nav-filter.no-results {
+    background: #fff; /* White background for no results */
+    color: #000; /* Black text */
+}
