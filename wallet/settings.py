@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'management',
     'User',
     'crispy_forms',
-    'sslserver',
     'crispy_bootstrap4',
 ]
 
