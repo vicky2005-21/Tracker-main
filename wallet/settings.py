@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'web-xhqbp5t53ep7.up-de-fra1-k8s-1.apps.run-on-seenode.com').split(',')
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -87,11 +87,12 @@ WSGI_APPLICATION = 'wallet.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'wallet'),
-        'USER': os.getenv('POSTGRES_USER', 'user'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'password'),
-        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
-        'PORT': os.getenv('POSTGRES_PORT', '5432'),
+        'NAME': 'defaultdb',
+        'USER': 'avnadmin',
+        'PASSWORD': 'AVNS_VeK6AGQOgzchGLxZBQH',
+        'HOST': 'pg-1fafec58-vigneshchowdaryatthapatala-9bbb.h.aivencloud.com',
+        'PORT': '15225',
+       
     }
 }
 
